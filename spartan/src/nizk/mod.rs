@@ -8,7 +8,7 @@ use ark_ec::CurveGroup;
 use ark_serialize::*;
 use bullet::BulletReductionProof;
 use merlin::Transcript;
-mod bullet;
+pub mod bullet;
 
 #[derive(CanonicalSerialize, CanonicalDeserialize, Debug)]
 pub struct KnowledgeProof<G: CurveGroup> {

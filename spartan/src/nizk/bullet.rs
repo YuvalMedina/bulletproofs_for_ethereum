@@ -15,8 +15,8 @@ use merlin::Transcript;
 
 #[derive(Debug, CanonicalSerialize, CanonicalDeserialize)]
 pub struct BulletReductionProof<G: CurveGroup> {
-  L_vec: Vec<G>,
-  R_vec: Vec<G>,
+  pub L_vec: Vec<G>,
+  pub R_vec: Vec<G>,
 }
 
 impl<G: CurveGroup> BulletReductionProof<G> {
