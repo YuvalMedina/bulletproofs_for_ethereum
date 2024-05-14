@@ -12,12 +12,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let transcript = &mut Transcript::new(b"BulletProofs Example");
     let Q: G1Projective = G1Projective::generator();
-    let G_vec: Vec<G1Projective> = vec![G1Projective::generator(); 2]; // Example
+    let G_vec: Vec<G1Projective> = vec![G1Projective::generator(); 4]; // Example
     let H: G1Projective = G1Projective::generator();
-    let a_vec: Vec<Fr> = vec![Fr::rand(&mut rng); 2]; // Example
-    let b_vec: Vec<Fr> = vec![Fr::rand(&mut rng); 2]; // Example
+    let a_vec: Vec<Fr> = vec![Fr::rand(&mut rng); 4]; // Example
+    let b_vec: Vec<Fr> = vec![Fr::rand(&mut rng); 4]; // Example
     let blind: Fr = Fr::rand(&mut rng);
-    let blinds_vec: Vec<(Fr, Fr)> = vec![(Fr::rand(&mut rng), Fr::rand(&mut rng)); 2]; // Example
+    let blinds_vec: Vec<(Fr, Fr)> = vec![(Fr::rand(&mut rng), Fr::rand(&mut rng)); 4]; // Example
 
     // Call the prove function.
     let (proof, gamma_hat, a, b, g, blind_fin) = BulletReductionProof::<ark_bn254::G1Projective>::prove(
